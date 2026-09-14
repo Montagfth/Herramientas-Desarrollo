@@ -1,0 +1,45 @@
+2026-09-13T00:36:12.035-05:00  INFO 78078 --- [Farma] [main] com.Farmacy.Farma.FarmaApplication       : Starting FarmaApplication using Java 25.0.4 with PID 78078 (/home/fabrizio/Documentos/Proyectos-CicloVIII-Universidad/Repositorio-Herramientas-Desarrollo/Farma/target/classes started by fabrizio in /home/fabrizio/Documentos/Proyectos-CicloVIII-Universidad/Repositorio-Herramientas-Desarrollo/Farma)
+2026-09-13T00:36:12.036-05:00  INFO 78078 --- [Farma] [main] com.Farmacy.Farma.FarmaApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-09-13T00:36:12.336-05:00  INFO 78078 --- [Farma] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9080 (http)
+2026-09-13T00:36:12.343-05:00  INFO 78078 --- [Farma] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-13T00:36:12.344-05:00  INFO 78078 --- [Farma] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-13T00:36:12.360-05:00  INFO 78078 --- [Farma] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 302 ms
+2026-09-13T00:36:12.427-05:00  WARN 78078 --- [Farma] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Unsatisfied dependency expressed through method 'requestMappingHandlerMapping' parameter 0: Error creating bean with name 'mvcContentNegotiationManager' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.accept.ContentNegotiationManager]: Factory method 'mvcContentNegotiationManager' threw exception with message: Error creating bean with name 'jacksonJsonHttpMessageConvertersCustomizer' defined in class path resource [org/springframework/boot/http/converter/autoconfigure/JacksonHttpMessageConvertersConfiguration$JacksonJsonHttpMessageConverterConfiguration.class]: Unsatisfied dependency expressed through method 'jacksonJsonHttpMessageConvertersCustomizer' parameter 0: Error creating bean with name 'jacksonJsonMapper' defined in class path resource [org/springframework/boot/jackson/autoconfigure/JacksonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'jacksonJsonMapper' parameter 0: Error creating bean with name 'jsonMapperBuilder' defined in class path resource [org/springframework/boot/jackson/autoconfigure/JacksonAutoConfiguration.class]: Unsatisfied dependency expressed through method 'jsonMapperBuilder' parameter 1: Error creating bean with name 'jsonFactory' defined in class path resource [org/springframework/boot/jackson/autoconfigure/JacksonAutoConfiguration.class]: Failed to instantiate [tools.jackson.core.json.JsonFactory]: Factory method 'jsonFactory' threw exception with message: Error creating bean with name 'org.springframework.boot.jackson.autoconfigure.JacksonAutoConfiguration$JacksonJsonCustomizerConfiguration': Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'spring.jackson-org.springframework.boot.jackson.autoconfigure.JacksonProperties': Could not bind properties to 'JacksonProperties' : prefix=spring.jackson, ignoreInvalidFields=false, ignoreUnknownFields=true
+2026-09-13T00:36:12.428-05:00  INFO 78078 --- [Farma] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-09-13T00:36:12.436-05:00  INFO 78078 --- [Farma] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-13T00:36:12.442-05:00 ERROR 78078 --- [Farma] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.jackson.serialization' to java.util.Map<tools.jackson.databind.SerializationFeature, java.lang.Boolean>:
+
+    Reason: failed to convert java.lang.String to tools.jackson.databind.SerializationFeature (caused by java.lang.IllegalArgumentException: No enum constant tools.jackson.databind.SerializationFeature.write-dates-as-timestamps)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    APPLY_JSON_INCLUDE_FOR_CONTAINERS
+    CLOSE_CLOSEABLE
+    EAGER_SERIALIZER_FETCH
+    FAIL_ON_EMPTY_BEANS
+    FAIL_ON_ORDER_MAP_BY_INCOMPARABLE_KEY
+    FAIL_ON_SELF_REFERENCES
+    FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS
+    FLUSH_AFTER_WRITE_VALUE
+    INDENT_OUTPUT
+    ORDER_MAP_ENTRIES_BY_KEYS
+    USE_EQUALITY_FOR_OBJECT_ID
+    WRAP_EXCEPTIONS
+    WRAP_ROOT_VALUE
+    WRITE_CHAR_ARRAYS_AS_JSON_ARRAYS
+    WRITE_EMPTY_JSON_ARRAYS
+    WRITE_SELF_REFERENCES_AS_NULL
+    WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED
+
