@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avance 1 - Proyecto UTP</title>
 
-    <!-- Tailwind CSS (Framework Obligatorio/Recomendado) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- FontAwesome para íconos de redes sociales -->
+    <!-- FontAwesome para íconos -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -21,9 +21,8 @@
     />
 
     <style>
-      /* Estilos base para garantizar que el texto largo se vea bien */
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
       }
       .swiper-slide img {
         width: 100%;
@@ -32,38 +31,43 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+  <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen antialiased">
     <!-- =====================================================================
          CABEZA (HEADER)
          ===================================================================== -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
       <div
-        class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4"
+        class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4"
       >
-        <!-- ELEMENTO 1 y 2: Título, nombre de la empresa y Logo -->
-        <div class="flex items-center gap-4">
-          <img
-            src="https://placehold.co/60x60/2563eb/white?text=LOGO"
-            alt="Logo de la Empresa"
-            class="w-16 h-16 rounded-full object-cover shadow-sm border border-gray-200"
-          />
-          <h1
-            class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight"
-          >
-            Nombre de la Empresa
-          </h1>
+        <!-- ELEMENTO 1 y 2: Título, logo y nombre -->
+        <div class="flex items-center gap-4 group cursor-pointer">
+          <div class="relative">
+            <img
+              src="https://placehold.co/60x60/2563eb/white?text=LOGO"
+              alt="Logo de la Empresa"
+              class="w-14 h-14 rounded-2xl object-cover shadow-md border border-blue-100 group-hover:scale-105 transition duration-300"
+            />
+          </div>
+          <div>
+            <h1
+              class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+            >
+              Nombre de la Empresa
+            </h1>
+            <p class="text-xs text-slate-400 font-medium">Soluciones Tecnológicas e Innovación</p>
+          </div>
         </div>
 
-        <!-- ELEMENTO 13: Interfaz de login y registro (solo diseño) -->
+        <!-- ELEMENTO 13: Interfaz de login y registro -->
         <div class="flex items-center gap-3">
           <a
             href="#"
-            class="px-5 py-2 border border-blue-600 text-blue-600 font-semibold rounded hover:bg-blue-50 transition"
+            class="px-5 py-2.5 text-slate-700 font-semibold text-sm rounded-xl hover:bg-slate-100 transition duration-200"
             >Login</a
           >
           <a
             href="#"
-            class="px-5 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition shadow-md"
+            class="px-5 py-2.5 bg-blue-600 text-white font-semibold text-sm rounded-xl hover:bg-blue-700 transition duration-200 shadow-md shadow-blue-500/20 active:scale-95"
             >Registro</a
           >
         </div>
@@ -73,29 +77,29 @@
     <!-- =====================================================================
          BARRA DE NAVEGACIÓN
          ===================================================================== -->
-    <!-- ELEMENTO 3: Barra de navegación con las páginas básicas -->
-    <nav class="bg-gray-800 text-gray-200 sticky top-0 z-50 shadow-md">
-      <div class="max-w-7xl mx-auto px-4">
+    <!-- ELEMENTO 3: Barra de navegación -->
+    <nav class="bg-slate-900 text-slate-300 border-b border-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
         <ul
-          class="flex flex-wrap justify-center sm:justify-start gap-6 py-3 font-medium text-sm md:text-base"
+          class="flex flex-wrap justify-center sm:justify-start gap-8 py-3.5 font-medium text-sm"
         >
-          <li><a href="#" class="hover:text-white transition">Inicio</a></li>
-          <li><a href="#" class="hover:text-white transition">Nosotros</a></li>
-          <li><a href="#" class="hover:text-white transition">Productos</a></li>
-          <li><a href="#" class="hover:text-white transition">Anuncios</a></li>
-          <li><a href="#" class="hover:text-white transition">Contacto</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition duration-200 flex items-center gap-2"><i class="fa-solid fa-house text-xs"></i>Inicio</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition duration-200">Nosotros</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition duration-200">Productos</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition duration-200">Anuncios</a></li>
+          <li><a href="#" class="hover:text-blue-400 transition duration-200">Contacto</a></li>
         </ul>
       </div>
     </nav>
 
     <!-- CONTENIDO PRINCIPAL -->
-    <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-8 space-y-12">
+    <main class="flex-grow w-full max-w-7xl mx-auto px-6 py-10 space-y-14">
       <!-- =====================================================================
              CARRUSEL (HERO)
              ===================================================================== -->
-      <!-- ELEMENTO 4: Portada o carrusel de 3 a 5 imágenes -->
+      <!-- ELEMENTO 4: Portada / Carrusel -->
       <section
-        class="w-full h-[300px] md:h-[450px] rounded-xl overflow-hidden shadow-lg relative"
+        class="w-full h-[320px] md:h-[480px] rounded-3xl overflow-hidden shadow-xl relative border border-slate-200/60"
       >
         <div class="swiper mySwiper h-full">
           <div class="swiper-wrapper">
@@ -121,7 +125,6 @@
               />
             </div>
           </div>
-          <!-- Controles del Swiper -->
           <div class="swiper-button-next text-white drop-shadow-md"></div>
           <div class="swiper-button-prev text-white drop-shadow-md"></div>
           <div class="swiper-pagination"></div>
@@ -131,65 +134,59 @@
       <!-- =====================================================================
              LA EMPRESA & VIDEO
              ===================================================================== -->
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        <!-- ELEMENTO 5: Información de la empresa (Concepto redactado de 10 líneas a más) -->
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-          <h2
-            class="text-2xl font-bold text-gray-900 border-b-2 border-blue-600 pb-2 mb-4 uppercase inline-block"
-          >
-            La Empresa
-          </h2>
-          <!-- Texto generado con la longitud suficiente para cubrir el requisito de >10 líneas -->
-          <p class="text-gray-600 leading-relaxed text-justify">
-            Somos una organización comprometida con la excelencia y la
-            innovación en nuestro sector. Desde nuestra fundación, nos hemos
-            dedicado a proporcionar soluciones de alta calidad que superen las
-            expectativas de nuestros clientes. Nuestro equipo está conformado
-            por profesionales altamente capacitados que trabajan incansablemente
-            para desarrollar productos y servicios vanguardistas. Creemos
-            firmemente en el poder de la tecnología para transformar la manera
-            en que operan los negocios hoy en día. Por ello, invertimos
-            constantemente en investigación y desarrollo, asegurándonos de estar
-            siempre un paso adelante en un mercado competitivo. Nuestra misión
-            no es solo satisfacer una necesidad, sino crear un impacto positivo
-            y duradero en la comunidad y en el medio ambiente. Promovemos una
-            cultura laboral basada en el respeto, la diversidad y el aprendizaje
-            continuo, lo cual se refleja en el excelente trato hacia nuestros
-            socios y consumidores. Mirando hacia el futuro, nuestra visión es
-            expandir nuestras operaciones a nivel internacional, llevando
-            nuestro modelo de éxito a nuevos horizontes. Estamos orgullosos de
-            nuestro recorrido y emocionados por los retos que nos esperan,
-            siempre fieles a nuestros valores fundamentales de integridad,
-            transparencia y compromiso social.
-          </p>
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+        <!-- ELEMENTO 5: Información de la empresa -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:shadow-md transition">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2.5 h-8 bg-blue-600 rounded-full"></span>
+              <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">
+                La Empresa
+              </h2>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-justify text-sm md:text-base">
+              Somos una organización comprometida con la excelencia y la
+              innovación en nuestro sector. Desde nuestra fundación, nos hemos
+              dedicado a proporcionar soluciones de alta calidad que superen las
+              expectativas de nuestros clientes. Nuestro equipo está conformado
+              por profesionales altamente capacitados que trabajan incansablemente
+              para desarrollar productos y servicios vanguardistas. Creemos
+              firmemente en el poder de la tecnología para transformar la manera
+              en que operan los negocios hoy en día. Por ello, invertimos
+              constantemente en investigación y desarrollo, asegurándonos de estar
+              siempre un paso adelante en un mercado competitivo. Nuestra misión
+              no es solo satisfacer una necesidad, sino crear un impacto positivo
+              y duradero en la comunidad y en el medio ambiente. Promovemos una
+              cultura laboral basada en el respeto, la diversidad y el aprendizaje
+              continuo, lo cual se refleja en el excelente trato hacia nuestros
+              socios y consumidores. Mirando hacia el futuro, nuestra visión es
+              expandir nuestras operaciones a nivel internacional, llevando
+              nuestro modelo de éxito a nuevos horizontes. Estamos orgullosos de
+              nuestro recorrido y emocionados por los retos que nos esperan,
+              siempre fieles a nuestros valores fundamentales de integridad,
+              transparencia y compromiso social.
+            </p>
+          </div>
         </div>
 
-        <!-- ELEMENTO 6: Videos representativos de la empresa -->
+        <!-- ELEMENTO 6: Video representativo -->
         <div
-          class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 h-full flex flex-col justify-center"
+          class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-center items-center hover:shadow-md transition"
         >
           <div
-            class="aspect-video w-full rounded-lg overflow-hidden shadow-inner bg-gray-200"
+            class="aspect-video w-full rounded-2xl overflow-hidden shadow-md bg-slate-100"
           >
-            <!-- Placeholder de Video de YouTube (Reemplazar el src con el link de embed real) -->
             <iframe
               class="w-full h-full"
               src="https://www.youtube.com/embed/ScMzIvxBSi4"
               title="Video de la Empresa"
               frameborder="0"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-              "
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
           </div>
-          <p class="text-center text-sm text-gray-500 mt-3 font-medium">
-            Conoce más sobre nosotros en este video
+          <p class="text-center text-xs text-slate-400 mt-4 font-medium flex items-center gap-2">
+            <i class="fa-solid fa-circle-info text-blue-500"></i> Conoce más sobre nuestras instalaciones y equipo de trabajo
           </p>
         </div>
       </section>
@@ -197,120 +194,104 @@
       <!-- =====================================================================
              PRODUCTOS O SERVICIOS
              ===================================================================== -->
-      <!-- ELEMENTO 7: 6 productos o servicios representativos -->
-      <section class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-        <h2
-          class="text-2xl font-bold text-gray-900 border-b-2 border-blue-600 pb-2 mb-8 uppercase inline-block"
-        >
-          6 Productos o Servicios
-        </h2>
+      <!-- ELEMENTO 7: 6 productos o servicios -->
+      <section class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-slate-200/80">
+        <div class="flex items-center gap-2 mb-8">
+          <span class="w-2.5 h-8 bg-blue-600 rounded-full"></span>
+          <h2 class="text-2xl font-bold text-slate-900 uppercase tracking-wide">
+            Productos & Servicios
+          </h2>
+        </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Producto 1 -->
-          <div
-            class="border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col"
-          >
-            <img
-              src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+1"
-              alt="Producto 1"
-              class="w-full h-40 object-cover"
-            />
-            <div class="p-4 flex-grow">
-              <h3 class="font-bold text-lg mb-1">Nombre del Producto 1</h3>
-              <p class="text-gray-600 text-sm">
-                Breve descripción del servicio o producto para captar el interés
-                del cliente.
-              </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Tarjeta base para los 6 productos -->
+          <div class="group border border-slate-200/80 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col bg-slate-50/50">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+1" alt="Producto 1" class="w-full h-44 object-cover group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg mb-2 group-hover:text-blue-600 transition">Nombre del Producto 1</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Breve descripción del servicio o producto optimizada para captar la atención del usuario.</p>
+              </div>
+              <button class="mt-4 text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                Ver detalles <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
             </div>
           </div>
 
-          <!-- Producto 2 -->
-          <div
-            class="border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col"
-          >
-            <img
-              src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+2"
-              alt="Producto 2"
-              class="w-full h-40 object-cover"
-            />
-            <div class="p-4 flex-grow">
-              <h3 class="font-bold text-lg mb-1">Nombre del Producto 2</h3>
-              <p class="text-gray-600 text-sm">
-                Breve descripción del servicio o producto para captar el interés
-                del cliente.
-              </p>
+          <div class="group border border-slate-200/80 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col bg-slate-50/50">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+2" alt="Producto 2" class="w-full h-44 object-cover group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg mb-2 group-hover:text-blue-600 transition">Nombre del Producto 2</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Breve descripción del servicio o producto optimizada para captar la atención del usuario.</p>
+              </div>
+              <button class="mt-4 text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                Ver detalles <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
             </div>
           </div>
 
-          <!-- Producto 3 -->
-          <div
-            class="border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col"
-          >
-            <img
-              src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+3"
-              alt="Producto 3"
-              class="w-full h-40 object-cover"
-            />
-            <div class="p-4 flex-grow">
-              <h3 class="font-bold text-lg mb-1">Nombre del Producto 3</h3>
-              <p class="text-gray-600 text-sm">
-                Breve descripción del servicio o producto para captar el interés
-                del cliente.
-              </p>
+          <div class="group border border-slate-200/80 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col bg-slate-50/50">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+3" alt="Producto 3" class="w-full h-44 object-cover group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg mb-2 group-hover:text-blue-600 transition">Nombre del Producto 3</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Breve descripción del servicio o producto optimizada para captar la atención del usuario.</p>
+              </div>
+              <button class="mt-4 text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                Ver detalles <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
             </div>
           </div>
 
-          <!-- Producto 4 -->
-          <div
-            class="border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col"
-          >
-            <img
-              src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+4"
-              alt="Producto 4"
-              class="w-full h-40 object-cover"
-            />
-            <div class="p-4 flex-grow">
-              <h3 class="font-bold text-lg mb-1">Nombre del Producto 4</h3>
-              <p class="text-gray-600 text-sm">
-                Breve descripción del servicio o producto para captar el interés
-                del cliente.
-              </p>
+          <div class="group border border-slate-200/80 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col bg-slate-50/50">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+4" alt="Producto 4" class="w-full h-44 object-cover group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg mb-2 group-hover:text-blue-600 transition">Nombre del Producto 4</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Breve descripción del servicio o producto optimizada para captar la atención del usuario.</p>
+              </div>
+              <button class="mt-4 text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                Ver detalles <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
             </div>
           </div>
 
-          <!-- Producto 5 -->
-          <div
-            class="border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col"
-          >
-            <img
-              src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+5"
-              alt="Producto 5"
-              class="w-full h-40 object-cover"
-            />
-            <div class="p-4 flex-grow">
-              <h3 class="font-bold text-lg mb-1">Nombre del Producto 5</h3>
-              <p class="text-gray-600 text-sm">
-                Breve descripción del servicio o producto para captar el interés
-                del cliente.
-              </p>
+          <div class="group border border-slate-200/80 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col bg-slate-50/50">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+5" alt="Producto 5" class="w-full h-44 object-cover group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg mb-2 group-hover:text-blue-600 transition">Nombre del Producto 5</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Breve descripción del servicio o producto optimizada para captar la atención del usuario.</p>
+              </div>
+              <button class="mt-4 text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                Ver detalles <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
             </div>
           </div>
 
-          <!-- Producto 6 -->
-          <div
-            class="border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col"
-          >
-            <img
-              src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+6"
-              alt="Producto 6"
-              class="w-full h-40 object-cover"
-            />
-            <div class="p-4 flex-grow">
-              <h3 class="font-bold text-lg mb-1">Nombre del Producto 6</h3>
-              <p class="text-gray-600 text-sm">
-                Breve descripción del servicio o producto para captar el interés
-                del cliente.
-              </p>
+          <div class="group border border-slate-200/80 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col bg-slate-50/50">
+            <div class="overflow-hidden">
+              <img src="https://placehold.co/400x250/e2e8f0/475569?text=Producto+6" alt="Producto 6" class="w-full h-44 object-cover group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-5 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-slate-800 text-lg mb-2 group-hover:text-blue-600 transition">Nombre del Producto 6</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Breve descripción del servicio o producto optimizada para captar la atención del usuario.</p>
+              </div>
+              <button class="mt-4 text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                Ver detalles <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -319,60 +300,28 @@
       <!-- =====================================================================
              CLIENTES Y PROVEEDORES
              ===================================================================== -->
-      <section class="grid grid-cols-1 md:grid-cols-2 gap-10 pb-8">
-        <!-- ELEMENTO 8: Clientes representativos -->
-        <div
-          class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center md:text-left"
-        >
-          <h2
-            class="text-xl font-bold text-gray-900 border-b-2 border-blue-600 pb-2 mb-6 uppercase inline-block"
-          >
-            Clientes
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-10 pb-6">
+        <!-- ELEMENTO 8: Clientes -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200/80 text-center md:text-left">
+          <h2 class="text-xl font-bold text-slate-900 uppercase tracking-wide mb-6">
+            Nuestros Clientes
           </h2>
           <div class="flex justify-center md:justify-start gap-6">
-            <img
-              src="https://placehold.co/100x100/cbd5e1/475569?text=C1"
-              alt="Cliente 1"
-              class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow border border-gray-200 hover:scale-110 transition transform"
-            />
-            <img
-              src="https://placehold.co/100x100/cbd5e1/475569?text=C2"
-              alt="Cliente 2"
-              class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow border border-gray-200 hover:scale-110 transition transform"
-            />
-            <img
-              src="https://placehold.co/100x100/cbd5e1/475569?text=C3"
-              alt="Cliente 3"
-              class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover shadow border border-gray-200 hover:scale-110 transition transform"
-            />
+            <img src="https://placehold.co/100x100/cbd5e1/475569?text=C1" alt="Cliente 1" class="w-20 h-20 rounded-full object-cover shadow-sm border-2 border-slate-100 hover:scale-110 transition duration-300" />
+            <img src="https://placehold.co/100x100/cbd5e1/475569?text=C2" alt="Cliente 2" class="w-20 h-20 rounded-full object-cover shadow-sm border-2 border-slate-100 hover:scale-110 transition duration-300" />
+            <img src="https://placehold.co/100x100/cbd5e1/475569?text=C3" alt="Cliente 3" class="w-20 h-20 rounded-full object-cover shadow-sm border-2 border-slate-100 hover:scale-110 transition duration-300" />
           </div>
         </div>
 
-        <!-- ELEMENTO 9: Proveedores, aliados y socios -->
-        <div
-          class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center md:text-left"
-        >
-          <h2
-            class="text-xl font-bold text-gray-900 border-b-2 border-blue-600 pb-2 mb-6 uppercase inline-block"
-          >
+        <!-- ELEMENTO 9: Proveedores -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200/80 text-center md:text-left">
+          <h2 class="text-xl font-bold text-slate-900 uppercase tracking-wide mb-6">
             Aliados y Proveedores
           </h2>
           <div class="flex flex-wrap justify-center md:justify-start gap-4">
-            <img
-              src="https://placehold.co/140x60/f1f5f9/475569?text=Proveedor+1"
-              alt="Proveedor 1"
-              class="h-12 md:h-16 rounded object-cover shadow-sm border border-gray-200 hover:scale-105 transition transform"
-            />
-            <img
-              src="https://placehold.co/140x60/f1f5f9/475569?text=Proveedor+2"
-              alt="Proveedor 2"
-              class="h-12 md:h-16 rounded object-cover shadow-sm border border-gray-200 hover:scale-105 transition transform"
-            />
-            <img
-              src="https://placehold.co/140x60/f1f5f9/475569?text=Proveedor+3"
-              alt="Proveedor 3"
-              class="h-12 md:h-16 rounded object-cover shadow-sm border border-gray-200 hover:scale-105 transition transform"
-            />
+            <img src="https://placehold.co/140x60/f1f5f9/475569?text=Proveedor+1" alt="Proveedor 1" class="h-14 rounded-xl object-cover border border-slate-200/80 hover:scale-105 transition duration-300" />
+            <img src="https://placehold.co/140x60/f1f5f9/475569?text=Proveedor+2" alt="Proveedor 2" class="h-14 rounded-xl object-cover border border-slate-200/80 hover:scale-105 transition duration-300" />
+            <img src="https://placehold.co/140x60/f1f5f9/475569?text=Proveedor+3" alt="Proveedor 3" class="h-14 rounded-xl object-cover border border-slate-200/80 hover:scale-105 transition duration-300" />
           </div>
         </div>
       </section>
@@ -381,54 +330,38 @@
     <!-- =====================================================================
          PIE DE PÁGINA (FOOTER)
          ===================================================================== -->
-    <footer class="bg-[#111827] text-gray-400 py-10 mt-auto">
+    <footer class="bg-slate-950 text-slate-400 py-12 mt-auto border-t border-slate-800">
       <div
-        class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center text-center sm:text-left"
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 items-center text-center sm:text-left"
       >
-        <!-- ELEMENTO 10: Logos de redes sociales -->
-        <div class="flex justify-center sm:justify-start gap-5">
-          <a
-            href="#"
-            class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition duration-300 text-xl"
-          >
+        <!-- ELEMENTO 10: Redes Sociales -->
+        <div class="flex justify-center sm:justify-start gap-4">
+          <a href="#" class="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition duration-300 text-lg">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a
-            href="#"
-            class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center hover:bg-blue-400 hover:text-white hover:border-blue-400 transition duration-300 text-xl"
-          >
+          <a href="#" class="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-sky-500 hover:text-white transition duration-300 text-lg">
             <i class="fa-brands fa-twitter"></i>
           </a>
-          <a
-            href="#"
-            class="w-12 h-12 rounded-full border border-gray-600 flex items-center justify-center hover:bg-pink-600 hover:text-white hover:border-pink-600 transition duration-300 text-xl"
-          >
+          <a href="#" class="w-11 h-11 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition duration-300 text-lg">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </div>
 
-        <!-- ELEMENTO 11: Logo de la universidad (UTP) -->
+        <!-- ELEMENTO 11: Logo UTP -->
         <div class="flex justify-center">
-          <!-- Se usa un fondo blanco alrededor del logo para que resalte en el footer oscuro, tal como es el logo de la UTP real -->
-          <div class="bg-white p-2 rounded w-48 shadow-lg">
-            <img
-              src="https://placehold.co/300x100/ffffff/dd0000?text=LOGO+UTP"
-              alt="Logo UTP"
-              class="w-full h-auto"
-            />
+          <div class="bg-white p-3 rounded-2xl w-44 shadow-lg border border-slate-200">
+            <img src="https://placehold.co/300x100/ffffff/dd0000?text=LOGO+UTP" alt="Logo UTP" class="w-full h-auto" />
           </div>
         </div>
 
-        <!-- ELEMENTO 12: Contacto real de un trabajador -->
+        <!-- ELEMENTO 12: Contacto -->
         <div class="sm:text-right">
-          <h4 class="text-white font-bold text-lg mb-2">Contacto</h4>
-          <p class="font-medium text-gray-300">
+          <h4 class="text-white font-bold text-base mb-1">Contacto</h4>
+          <p class="font-medium text-slate-300 text-sm">
             Sebastian Alexander Lopez Cutipa
           </p>
-          <p class="text-blue-400 hover:text-blue-300 transition mt-1">
-            <a href="mailto:correo@empresa.com"
-              ><i class="fa-solid fa-envelope mr-2"></i>correo@empresa.com</a
-            >
+          <p class="text-blue-400 hover:text-blue-300 transition text-sm mt-1">
+            <a href="mailto:correo@empresa.com"><i class="fa-solid fa-envelope mr-1.5"></i>correo@empresa.com</a>
           </p>
         </div>
       </div>
